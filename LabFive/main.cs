@@ -1,28 +1,25 @@
 ﻿using System;
 using System.IO;
+using System.Runtime.CompilerServices;
 using System.Text.RegularExpressions;
 
 namespace LabFive
 {
     class File
     {
-        static void FileOne()
+        static void Main(string[] args)
         {
             Console.Write("Вставьте путь к файлу: ");
-            string Path = Console.ReadLine();   
+            string Path = Console.ReadLine();
             FileInfo fileInfo = new FileInfo(Path);
             if (!fileInfo.Exists)
             {
                 Console.WriteLine("Такого файла нет.");
-            } 
-        }
-        static void Main(string[] args)
-        {
-            FileOne();
+            }
             int UserChoice = 0;
             while (UserChoice != 3)
             {
-                Console.WriteLine("Что сделать с файлом?\n1.Исправить ошибочные слова.\n2.Заменить номера телефонов.\n3.Exit.");
+                Console.WriteLine("Что сделать с файлом?\n1.Исправить номера телефонов.\n2.Заменить ошибочные слова.\n3.Exit.");
                 while (UserChoice < 1 || UserChoice > 3)
                 {
                     if (int.TryParse(Convert.ToString(Console.ReadLine()), out UserChoice) == false)
@@ -31,17 +28,18 @@ namespace LabFive
                     }
                 }
                 Console.Clear();
-                //FileStream File = new FileStream(FilePath, FileMode.Open);
+               
                 switch (UserChoice)
                 {
                     case 1:
-                        Console.Write("Okey");
+                        Console.Clear();
+                        EditPhoneNumbers.EditorOfPhoneNumbers(Path);
                         break;
-                    //вызов метода, который заменяет ошибочные слова
+                    //регулярное выражение заменит номера
                     case 2:
                         Console.Write("No prob");
                         break;
-                        //вызов регулярного выражения, которое заменит номера телефонов
+                        //вызов класса(???) который заменит ошибочные слова
                 }
                 Console.ReadKey();
             }
