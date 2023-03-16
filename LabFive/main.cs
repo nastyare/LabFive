@@ -35,7 +35,6 @@ namespace LabFive
                         Console.Clear();
                         EditPhoneNumbers.EditorOfPhoneNumbers(Path);
                         break;
-                    //регулярное выражение заменит номера
                     case 2:
                         Console.Write("No prob");
                         break;
