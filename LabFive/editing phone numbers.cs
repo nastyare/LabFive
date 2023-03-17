@@ -27,10 +27,17 @@ namespace LabFive
                    File.Write(Fin);
                 }
 
-            }
+            }            
             
             Console.Clear();
-            Console.WriteLine("Номера телефонов успешно заменены");
+            if (!Text.Contains(FirstNumber))
+            {
+                Console.Write("Не найдены номера для замены");
+            }
+            else
+            {
+                Console.WriteLine("Номера телефонов успешно заменены");
+            }
             Console.ReadKey();
         }
     }
