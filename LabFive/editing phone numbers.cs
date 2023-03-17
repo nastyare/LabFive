@@ -24,10 +24,9 @@ namespace LabFive
                 string Fin = Text.Replace(FirstNumber, ResultOfConvert);
                 using (System.IO.StreamWriter File = new System.IO.StreamWriter(Path))
                 {
-                   File.Write(Fin);
+                    File.Write(Fin);
                 }
-
-            }            
+            }
             
             Console.Clear();
             if (!Text.Contains(FirstNumber))

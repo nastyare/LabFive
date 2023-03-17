@@ -1,26 +1,28 @@
 ﻿using System;
+using System.Linq;
 using System.Collections.Generic;
 using System.IO;
+using System.Runtime.CompilerServices;
+using System.Text;
+using static System.Net.Mime.MediaTypeNames;
+using System.Text.RegularExpressions;
+using System.Collections;
 
-/*namespace LabFive
+namespace LabFive
 {
     internal class ChangingWords
     {
         public static void SearchingWrongWords(string Path)
         {
-            string[] WrongWords = { "пирвет", "првиет", "привит", "превет", "здраствуйте", "здравствйте", "сдравствуйте",
-                "здравтсвуйте", "досвиднания", "досвидания", "Пирвет", "Првиет", "Привит", "Превет", "Здраствуйте", "Здравствйте",
-                "Сдравствуйте", "Здравтсвуйте", "Досвиднания", "Досвидания" };
-            /*string[] RightWords = { "привет", "здравствуйте", "до свидания" };
-
-            Dictionary<string, string> keyValuePairs = new Dictionary<string, string>();*/
-
- /*           var Words = new Dictionary<int, string>()
+           /* Dictionary<string, string> MyDictionary = new Dictionary<string, string>()
             {
-                [1] = "Привет",
-                [2] = "Здравствуйте",
-                [3] = "До свидания"
-            };
+                [0] = "Привет",
+                [1] = "Здравствуйте",
+                [2] = "До свидания"
+            };*/
+            
+
+            string WrongWord = "пирвет";
 
             string Text = string.Empty;
             using (System.IO.StreamReader Reader = System.IO.File.OpenText(Path))
@@ -28,7 +30,17 @@ using System.IO;
                 Text = Reader.ReadToEnd();
             }
 
-            if ()
-        }
+            if (Text.Contains(WrongWord))
+            {
+                string RightWord = "привет";
+                string Result = Text.Replace(WrongWord, RightWord);
+                using (System.IO.StreamWriter File = new System.IO.StreamWriter(Path))
+                {
+                    File.Write(Result);
+                }
+            }
+            Console.Clear();
+            Console.Write("Ошибочное слово успешно изменено");
+        }         
     }
-}*/
+}

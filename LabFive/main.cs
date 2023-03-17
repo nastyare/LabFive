@@ -36,12 +36,15 @@ namespace LabFive
                         EditPhoneNumbers.EditorOfPhoneNumbers(Path);
                         break;
                     case 2:
-                        Console.Write("No prob");
+                        Console.Clear();
+                        ChangingWords.SearchingWrongWords(Path);
+                        //Console.Write("No prob");
                         break;
                         //вызов класса(???) который заменит ошибочные слова
                 }
-                Console.ReadKey();
+                
             }
+            Console.ReadKey();
         }
 
     }
