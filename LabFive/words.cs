@@ -16,7 +16,7 @@ namespace LabFive
         {
             var Words = new List<string>()
             {
-               "helo", "helllo", "goodby", "goodbey"
+               "helo", "helllo", "goodby", "goodbey", "goodbe"
             };
             var UsingWords = new List<string>(Words);
             
