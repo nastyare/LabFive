@@ -14,33 +14,54 @@ namespace LabFive
     {
         public static void SearchingWrongWords(string Path)
         {
-           /* Dictionary<string, string> MyDictionary = new Dictionary<string, string>()
+            var Words = new List<string>()
             {
-                [0] = "Привет",
-                [1] = "Здравствуйте",
-                [2] = "До свидания"
-            };*/
+               "helo", "helllo", "goodby", "goodbey"
+            };
+            var UsingWords = new List<string>(Words);
             
-
-            string WrongWord = "пирвет";
-
-            string Text = string.Empty;
-            using (System.IO.StreamReader Reader = System.IO.File.OpenText(Path))
+            for (int i = 0; i < UsingWords.Count; ++i)
             {
-                Text = Reader.ReadToEnd();
-            }
-
-            if (Text.Contains(WrongWord))
-            {
-                string RightWord = "привет";
-                string Result = Text.Replace(WrongWord, RightWord);
-                using (System.IO.StreamWriter File = new System.IO.StreamWriter(Path))
+                if (UsingWords[i] == "helo" || UsingWords[i] == "helllo")
                 {
-                    File.Write(Result);
+                    string Word = UsingWords[i];
+                    string Text = string.Empty;
+                    using (System.IO.StreamReader Reader = System.IO.File.OpenText(Path))
+                    {
+                        Text = Reader.ReadToEnd();
+                    }
+                    if (Text.Contains(Word))
+                    {
+                        string RightWord = "Hello";
+                        string Result = Text.Replace(Word, RightWord);
+                        using (System.IO.StreamWriter File = new System.IO.StreamWriter(Path))
+                        {
+                            File.Write(Result);
+                        }
+                    }
                 }
-            }
+                else if (UsingWords[i] == "goodby" || UsingWords[i] == "goodbey" || UsingWords[i] == "goodbe")
+                {
+                    string Word = UsingWords[i];
+                    string Text = string.Empty;
+                    using (System.IO.StreamReader Reader = System.IO.File.OpenText(Path))
+                    {
+                        Text = Reader.ReadToEnd();
+                    }
+                    if (Text.Contains(Word))
+                    {
+                        string RightWord = "Goodbye";
+                        string Result = Text.Replace(Word, RightWord);
+                        using (System.IO.StreamWriter File = new System.IO.StreamWriter(Path))
+                        {
+                            File.Write(Result);
+                        }
+                    }
+                }
+            } 
             Console.Clear();
-            Console.Write("Ошибочное слово успешно изменено");
+            Console.Write("Ошибочные слова успешно изменены");
+            Console.ReadKey();
         }         
     }
 }

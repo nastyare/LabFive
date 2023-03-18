@@ -34,13 +34,13 @@ namespace LabFive
                     case 1:
                         Console.Clear();
                         EditPhoneNumbers.EditorOfPhoneNumbers(Path);
+                        UserChoice = 0;
                         break;
                     case 2:
                         Console.Clear();
                         ChangingWords.SearchingWrongWords(Path);
-                        //Console.Write("No prob");
+                        UserChoice = 0;
                         break;
-                        //вызов класса(???) который заменит ошибочные слова
                 }
                 
             }
