@@ -16,15 +16,15 @@ namespace LabFive
         {
             var Words = new List<string>()
             {
-               "пирвет", "првиет", "здраствуйте", "сдравствуйте", "сдраствуйте"
+               "пирвет", "првиет", "привте", "здраствуйте", "сдравствуйте", "сдраствуйте"
             };
             var UsingWords = new List<string>(Words);
             
-            for (int i = 0; i < UsingWords.Count; ++i)
+            for (int IndexOfWord = 0; IndexOfWord < UsingWords.Count; ++IndexOfWord)
             {
-                if (UsingWords[i] == "пирвет" || UsingWords[i] == "првиет")
+                if (UsingWords[IndexOfWord] == "пирвет" || UsingWords[IndexOfWord] == "првиет" || UsingWords[IndexOfWord] == "привте")
                 {
-                    string Word = UsingWords[i];
+                    string Word = UsingWords[IndexOfWord];
                     string Text = string.Empty;
                     using (System.IO.StreamReader Reader = System.IO.File.OpenText(Path))
                     {
@@ -40,9 +40,9 @@ namespace LabFive
                         }
                     }
                 }
-                else if (UsingWords[i] == "здраствуйте" || UsingWords[i] == "сдравствуйте" || UsingWords[i] == "сдраствуйте")
+                else if (UsingWords[IndexOfWord] == "здраствуйте" || UsingWords[IndexOfWord] == "сдравствуйте" || UsingWords[IndexOfWord] == "сдраствуйте")
                 {
-                    string Word = UsingWords[i];
+                    string Word = UsingWords[IndexOfWord];
                     string Text = string.Empty;
                     using (System.IO.StreamReader Reader = System.IO.File.OpenText(Path))
                     {
