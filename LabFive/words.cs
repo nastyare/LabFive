@@ -16,13 +16,13 @@ namespace LabFive
         {
             var Words = new List<string>()
             {
-               "helo", "helllo", "goodby", "goodbey", "goodbe"
+               "пирвет", "првиет", "здраствуйте", "сдравствуйте", "сдраствуйте"
             };
             var UsingWords = new List<string>(Words);
             
             for (int i = 0; i < UsingWords.Count; ++i)
             {
-                if (UsingWords[i] == "helo" || UsingWords[i] == "helllo")
+                if (UsingWords[i] == "пирвет" || UsingWords[i] == "првиет")
                 {
                     string Word = UsingWords[i];
                     string Text = string.Empty;
@@ -32,7 +32,7 @@ namespace LabFive
                     }
                     if (Text.Contains(Word))
                     {
-                        string RightWord = "Hello";
+                        string RightWord = "Привет";
                         string Result = Text.Replace(Word, RightWord);
                         using (System.IO.StreamWriter File = new System.IO.StreamWriter(Path))
                         {
@@ -40,7 +40,7 @@ namespace LabFive
                         }
                     }
                 }
-                else if (UsingWords[i] == "goodby" || UsingWords[i] == "goodbey" || UsingWords[i] == "goodbe")
+                else if (UsingWords[i] == "здраствуйте" || UsingWords[i] == "сдравствуйте" || UsingWords[i] == "сдраствуйте")
                 {
                     string Word = UsingWords[i];
                     string Text = string.Empty;
@@ -50,7 +50,7 @@ namespace LabFive
                     }
                     if (Text.Contains(Word))
                     {
-                        string RightWord = "Goodbye";
+                        string RightWord = "Здравствуйте";
                         string Result = Text.Replace(Word, RightWord);
                         using (System.IO.StreamWriter File = new System.IO.StreamWriter(Path))
                         {
